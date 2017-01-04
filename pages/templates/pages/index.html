@@ -1,5 +1,9 @@
 {% extends "pages/base.html" %}
+{% load static %}
 {% block content %}
   <p>"Hello, Guys!"</p>
   <a href="{% url 'pages:about' %}">About</a>
+  <div class="">
+    <img src="{% static 'pages/images/logo.png' %}" alt="Python Logo" />
+  </div>
 {% endblock %}

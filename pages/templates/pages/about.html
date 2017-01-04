@@ -1,0 +1,9 @@
+{% extends "pages/base.html" %}
+{% block title %}
+  About | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <p>Here is about page</p>
+  <a href="{% url 'root' %}">Index</a>
+{% endblock %}

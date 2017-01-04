@@ -1,0 +1,23 @@
+{% extends "pages/base.html" %}
+
+{% block title %}
+  {{ category.title }}
+{% endblock %}
+
+{% block content %}
+<div>
+  <h1>{{ category.name }}</h1>
+  {% if pages %}
+    <ul>
+      {% for page in pages %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <strong>No pages currently in category.</strong>
+  {% endif %}
+</div>
+<div >
+  <a href="{% url 'root' %}">Back to index</a>
+</div>
+{% endblock %}

@@ -7,7 +7,7 @@
 {% block content %}
   <h1>Add new Page</h1>
   <div>
-    <form id="category_form" method="post" action="" novalidate>
+    <form class="col-md-6" id="page_form" method="post" action="" novalidate>
       {% csrf_token %}
       {% for field in form %}
       <div class="form-group">
@@ -17,8 +17,7 @@
       </div>
       {% endfor %}
 
-      <input type="submit" name="submit" value="Create Page" />
+      <input class="btn btn-primary" type="submit" name="submit" value="Create Page" />
     </form>
   </div>
-  <a href="{% url 'category_detail' category.slug %}">Cancel</a>
 {% endblock %}

@@ -3,29 +3,35 @@
 {% load pages_tags %}
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}PyRead{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'pages/css/base.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body>
-    {% block content %}
+    {% include 'pages/navbar.html'%}
+    <div class="container-fluid">
 
-    {% endblock %}
-    {% block sidebar %}
-    <div>
-      {% category_list category %}
+      <div class="row">
+        <div class="col-md-2">
+
+          {% block sidebar %}
+          {% category_list category %}
+          {% endblock %}
+        </div>
+        <div class="col-md-10">
+          {% block content %}{% endblock %}
+        </div>
+
+      </div>
     </div>
-    {% endblock %}
-    <hr>
-    <div>
-      <ul>
-        <li><a href="{% url 'pages:create' %}">Add New Category</a></li>
-        <li><a href="{% url 'pages:about' %}">About</a></li>
-        <li><a href="{% url 'root' %}">Index</a></li>
-      </ul>
-    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
     <script src="{% static 'pages/js/main.js' %}">
-
     </script>
   </body>
 </html>

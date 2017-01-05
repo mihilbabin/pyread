@@ -1,17 +1,15 @@
-<ul>
+<div class="list-group">
   {% if categories %}
   {% for c in categories %}
     {% if c == active_cat %}
-      <li>
         <strong>
-        <a href="{% url 'pages:detail' c.slug %}">{{ c.name }}</a>
+        <a class="list-group-item" href="{% url 'pages:detail' c.slug %}">{{ c.name }}</a>
         </strong>
-      </li>
     {% else %}
-      <li><a href="{% url 'pages:detail' c.slug %}">{{ c.name }}</a></li>
+      <a class="list-group-item" href="{% url 'pages:detail' c.slug %}">{{ c.name }}</a>
     {% endif %}
   {% endfor %}
   {% else %}
-  <li> <strong>There are no categories present.</strong></li>
+  <strong>There are no categories present.</strong>
   {% endif %}
-</ul>
+</div>

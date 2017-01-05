@@ -18,6 +18,7 @@
   {% endif %}
 </div>
 <div >
+  <a href="{% url 'pages:page_create' category.slug %}">Add Page</a>
   <a href="{% url 'root' %}">Back to index</a>
 </div>
 {% endblock %}

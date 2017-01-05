@@ -1,0 +1,22 @@
+{% extends "pages/base.html" %}
+
+{% block title %}
+  Add Category | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1>Create Category</h1>
+<div>
+  <form id="category_form" method="post" action="" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+      {{ field.help_text }}<br>
+      {{ field }}
+      {{ field.errors }}
+    </div>
+    {% endfor %}
+    <input type="submit" name="submit" value="Create Category" />
+  </form>
+</div>
+{% endblock %}

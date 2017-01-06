@@ -17,14 +17,14 @@
         <a class="nav-link" href="{% url 'pages:create' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Category</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        <a class="nav-link" href="{% url 'users:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
       </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'pages:create' %}"><i class="fa fa-pencil" aria-hidden="true"></i> Register</a>
+        <a class="nav-link" href="{% url 'users:register' %}"><i class="fa fa-pencil" aria-hidden="true"></i> Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+        <a class="nav-link" href="{% url 'users:login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
       </li>
       {% endif %}
     </ul>

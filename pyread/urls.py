@@ -7,6 +7,7 @@ from pages import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^read/', include('pages.urls')),
+    url(r'^users/', include('users.urls')),
     url(r'^$', views.index, name='root'),
 ]
 

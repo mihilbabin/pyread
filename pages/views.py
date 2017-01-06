@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Category, Page
 from .forms import CategoryForm, PageForm
 
@@ -18,6 +19,7 @@ def category_detail(request, slug):
     pages = category.pages.all()
     return render(request, 'pages/category/detail.html', {'category': category, 'pages': pages})
 
+@login_required
 def category_create(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -30,6 +32,7 @@ def category_create(request):
         form = CategoryForm()
     return render(request, 'pages/category/create.html', {'form': form})
 
+@login_required
 def page_create(request, slug):
     category = get_object_or_404(Category, slug=slug)
     if request.method == 'POST':
